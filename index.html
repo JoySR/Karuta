@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>歌牌练习 | 在线歌牌游戏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/google-fonts.css">
+	<link rel="stylesheet" href="css/exercise.css" />
+	<link rel="stylesheet" href="css/fuda.css" />
+</head>
+<body>
+<div id="wrapper">
+	<header class="row">
+		<h1 id="logo" class="columns large-3">歌牌练习</h1>
+		<nav class="columns large-4">
+			<ul>
+				<li><a href="game.html">游戏</a></li>
+				<li><a href="#">练习</a></li>
+				<li><a href="tips.html">技巧</a></li>
+				<li><a href="about.html">关于</a></li>
+			</ul>
+        </nav>
+<!--
+			<div id="login-area" class="columns large-3">
+				<input type="text" id="username" placeholder="用户名">
+				<input type="password" id="password" placeholder="密码">
+				<input type="submit" value="登录" class="button radius">
+			</div>
+-->
+	</header>
+    <div id="container">
+		<aside class="columns large-4 panel">
+			<section id="controller">
+				<div id="setting">
+					<p>共<span id="total-ex">10</span>组&nbsp;剩余<span id="remain-ex">x</span>组&nbsp;<button id="modify" class="button radius">修改总组数</button>&nbsp;<button id="new" class="button radius">重新练习</button></p>
+					
+                	
+					<div id="modify-panel">
+						<div class="large-12 columns">
+							<div class="row collapse">
+								<div class="small-10 columns">
+									<input type="number" id="totalCount" min="2" max="100" placeholder="修改区间: 2-20">
+								</div>
+								<div class="small-2 columns">
+									<input type="submit" class="button postfix" id="changeTotalCount" value="确定">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+			<section id="result">
+                	<h3>分数:</h3>
+					<span id="currentPoint">
+					</span>
+					<div id="pointHistory">
+					</div>
+				</section>
+			<section id="info">
+					<div id="currentFudaInfo">
+					</div>
+					<div id="fudaHistory">
+						<ul>
+							<li><a href="fuda-info.html?id=1">1</a></li>
+						</ul>
+					</div>
+
+			</section>
+		</aside>
+		<main id="fudaArea" class="columns large-8 panel">
+			<section id="yomiArea">
+			</section>
+			<section id="answerArea">
+
+			</section>
+			<section id="toriArea">
+			</section>
+		</main>
+	</div>
+</div>
+	<footer>
+ 		<p>&copy; 2015- Hanna 本练习为"在线歌牌游戏"计划的一部分。 All Rights Reserved</p>
+	</footer>
+	<script src="js/exercise.js"></script>
+
+</body>
+</html>
