@@ -1,18 +1,18 @@
+var Karuta = function(yomiCount, toriCount, chance) {
+    //TODO: 设置可更改组数
+    this.totalYomiFuda = yomiCount || 10; //每次猜测10组
+    this.totalToriFuda = toriCount || 6; //每组有6张候选花牌
+    this.toriChance = chance || 2;
+
+    this.point = 0;          //分数
+    this.pointHistory = [];  //历史分数记录
+};
+
 /* ------------ 全局变量 ------------- */
 var allFudaSet;         //保存全部花牌的数组
 var exFudaIndexSet;        //保存练习用的取牌数组
 var currentExFudaIndex;    //当前练习的花牌的索引
 var currentSelectedFudaIndex;    //练习时鼠标所选的取牌
-
-//TODO: 设置可更改组数
-var totalYomiFuda = 10; //每次猜测10组
-var totalToriFuda = 6;  //每组有6张候选花牌
-
-//TODO: 避免chance设置为全局变量
-var chance = 2;         //每组有两次机会 tried
-
-var point = 0;          //分数
-var pointHistory = [];  //历史分数记录
 
 
 //TODO: 历史最高分
@@ -29,7 +29,7 @@ var pointHistory = [];  //历史分数记录
 //TODO: 列出出现过的读札和相应的取札
 //var fudaHistory = [];   //测试过的花牌记录
 //
-var currentPointArea = document.getElementById("currentPoint");
+var currentPointArea = $("currentPoint");
 //var remainFudaCountArea = document.getElementById("remainFudaCount");
 //
 //var currentFudaInfoArea = document.getElementById("currentFudaInfo");
@@ -293,7 +293,7 @@ function displayToriFuda(fudaIndexSet) { //传入取牌数组中花牌对应的i
 }
 
 //重新开始按钮开始新练习
-var newExerciseButton = document.getElementById("new");
+var newExerciseButton = $("new");
 newExerciseButton.addEventListener("click", function() {
     //newExercise(totalYomiFuda);
     initExFudaSet(totalYomiFuda);
@@ -372,14 +372,22 @@ function getElementsByClassName(node, classname) {
         var classList = [];
         var allElements = document.getElementsByTagName('*');
         for (var i = 0; i < allElements.length; i++) {
-            //var currentElement = allElements[i];
-            //if (hasClass(currentElement, className)) {
-            //    classList.push(currentElement);
-            //}
             if (allElements[i].className.indexOf(classname) != -1) {
                 classList[classList.length] = allElements[i];
             }
         }
         return classList;
+    }
+}
+
+function $(elem) {
+    if (elem.charAt(0) === "#") {
+        elem.splice(0, 1);
+        return document.getElementById(elem);
+    } else if (elem.charAt(0) === ".") {
+        elem.splice(0, 1);
+        return getElementsByClassName(document, elem);
+    } else {
+        return document.getElementsByTagName(elem);
     }
 }
