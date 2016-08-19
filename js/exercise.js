@@ -29,7 +29,7 @@ var pointHistory = [];  //历史分数记录
 //TODO: 列出出现过的读札和相应的取札
 //var fudaHistory = [];   //测试过的花牌记录
 //
-var currentPointArea = document.getElementById("currentPoint");
+var currentPointArea = $("currentPoint");
 //var remainFudaCountArea = document.getElementById("remainFudaCount");
 //
 //var currentFudaInfoArea = document.getElementById("currentFudaInfo");
@@ -293,7 +293,7 @@ function displayToriFuda(fudaIndexSet) { //传入取牌数组中花牌对应的i
 }
 
 //重新开始按钮开始新练习
-var newExerciseButton = document.getElementById("new");
+var newExerciseButton = $("new");
 newExerciseButton.addEventListener("click", function() {
     //newExercise(totalYomiFuda);
     initExFudaSet(totalYomiFuda);
@@ -372,14 +372,22 @@ function getElementsByClassName(node, classname) {
         var classList = [];
         var allElements = document.getElementsByTagName('*');
         for (var i = 0; i < allElements.length; i++) {
-            //var currentElement = allElements[i];
-            //if (hasClass(currentElement, className)) {
-            //    classList.push(currentElement);
-            //}
             if (allElements[i].className.indexOf(classname) != -1) {
                 classList[classList.length] = allElements[i];
             }
         }
         return classList;
+    }
+}
+
+function $(elem) {
+    if (elem.charAt(0) === "#") {
+        elem.splice(0, 1);
+        return document.getElementById(elem);
+    } else if (elem.charAt(0) === ".") {
+        elem.splice(0, 1);
+        return getElementsByClassName(document, elem);
+    } else {
+        return document.getElementsByTagName(elem);
     }
 }

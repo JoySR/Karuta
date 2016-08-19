@@ -92,7 +92,7 @@ Karuta.prototype.currentFudaExercise = function (fudaIndex) {
     for (var i = 0; i < toriFuda.length; i++) {
         if(toriFuda[i]) {
             toriFuda[i].addEventListener("click", function() {
-                var id = this.getAttribute("id");
+                var id = this.parentNode.getAttribute("id");
                 _this.isCorrectFuda(id, _this, this);
             });
         }
@@ -142,7 +142,7 @@ Karuta.prototype.isCorrectFuda = function (id, _this, item) {
     } else if (_this.toriChance === 0) {
         _this.nextItem();
     } else {
-        item.parentNode.style.border = "4px solid #fe0000";
+        item.parentNode.style.borderColor = "#fe0000";
     }
     console.log("判断后剩余机会: " + _this.toriChance);
 };
@@ -205,8 +205,7 @@ Karuta.prototype.displaySingleFuda = function (fuda) {
 
 
     var fudaCard = document.createElement("div");
-    fudaCard.setAttribute("class", "fuda-text fuda-tori");
-    fudaCard.setAttribute("id", "fuda-" + fudaId);
+    fudaCard.setAttribute("class", "fuda-tori");
 
     var fudaR = document.createElement("span");
     fudaR.setAttribute("class", "fuda-right");
@@ -222,11 +221,6 @@ Karuta.prototype.displaySingleFuda = function (fuda) {
     fudaL.setAttribute("class", "fuda-left");
     var fudaLeftText = document.createTextNode(fudaEnd);
     fudaL.appendChild(fudaLeftText);
-
-    //为实现垂直居中增加的空div
-    var specialArea = document.createElement("div");
-    specialArea.setAttribute("class","special-area");
-    fudaCard.appendChild(specialArea);
 
     fudaCard.appendChild(fudaR);
     fudaCard.appendChild(fudaM);
@@ -251,15 +245,10 @@ Karuta.prototype.displayToriFuda = function (fudaIndexSet) { //传入取牌数�
         var fuda = this.allFudaSet["fuda"][fudaIndexSet[i]];
         var singleFudaArea = document.createElement("div");
         singleFudaArea.setAttribute("class", "fuda");
-        singleFudaArea.setAttribute("id", "fuda-area-"+ this.allFudaSet["fuda"][fudaIndexSet[i]].id);
-        // //为实现垂直居中增加的空div
-        // var specialArea = document.createElement("div");
-        // specialArea.setAttribute("class","special-area");
-        // singleFudaArea.appendChild(specialArea);
+        singleFudaArea.setAttribute("id", "fuda-"+ this.allFudaSet["fuda"][fudaIndexSet[i]].id);
 
         var singleFuda = this.displaySingleFuda(fuda);
         singleFudaArea.appendChild(singleFuda);
-
 
         var fudaNumber = fuda["id"];
 

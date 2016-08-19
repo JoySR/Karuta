@@ -1,7 +1,5 @@
 var Util = (function() {
-    /* ------------ 基础函数 ------------- */
-
-//随页面加载事件
+    //随页面加载事件
     function addLoadEvent (func) {
         var oldonload = window.onload;
         if (typeof window.onload != 'function') {
@@ -26,7 +24,7 @@ var Util = (function() {
         return false;
     }
 
-//产生随机数组序列
+    //产生随机数组序列
     function randomArray(total, range) {
         var totalArray = [];               //存放将随机取出的花牌数组的下标
         var rangeArray = [];               //存放随机后乱序的下标
@@ -120,10 +118,34 @@ var Util = (function() {
         }
     }
 
+    // 生成任意范围的随机数
+    function getRandomNum(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // 生成任意范围的随机整数
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // 生成随机字符串
+    function getRandomStr(len) {
+        var strList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+        var str = '';
+        for (var i=0; i < len; i++) {
+            var randIndex = Math.floor(Math.random() * strList.length); // 随机索引值
+            str += strList.substring(randIndex, randIndex + 1); // 获取所对应的值
+        }
+        return str;
+    }
+
     return {
         addLoadEvent: addLoadEvent,
         addEvent: addEvent,
         randomArray: randomArray,
+        getRandomNum: getRandomNum,
+        getRandomInt: getRandomInt,
+        getRandomStr: getRandomStr,
         getElementsByClassName: getElementsByClassName,
         $ : $,
         getHTTPObject: getHTTPObject,
