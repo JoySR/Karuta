@@ -1,83 +1,42 @@
-#yomiArea {
-    margin: 10px;
-    /*border: 1px solid #00f;*/
-    text-align: center;
-    font-size: .925em;
+.fuda {
+    float: left;
+    width: 5em;
+    height: 8em;
+    margin: 5px;
+    border: 3px solid #3A5745;
+    position: relative;
+    background: #fff;
+    -webkit-box-shadow: 1px 2px 3px #666;
+    -moz-box-shadow: 1px 2px 3px #666;
+    box-shadow: 1px 2px 3px #666;
 }
 
-#yomiArea span {
-    padding: 0 8px;
-    display: inline-block;
-}
-
-#toriArea {
-    width: 100%;
+.fuda-text {
+    margin-top: 6px;
+    height: 7.5em;
     overflow: auto;
-    text-align: center;
-    font-size: 1em;
-}
-
-#toriFudaWrapArea {
     display: inline-block;
-    overflow: auto;
-}
-
-.fuda-area:nth-child(3n+1) {
-    clear: left;
-}
-
-.fuda{
+    clear:both;
+    position: relative;
     cursor: pointer;
-/*     margin-top: 7px; */
 }
 
+.fuda-text span {
+    width: 1.1em;
+    float: right;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
 
-    .fuda-area {
-	    float: left;
-        width: 5em;
-        height: 8em;
-        margin: 5px;
-        border: 3px solid #3A5745;
-        position: relative;
-        background: #fff;
-    }
-    .fuda-area .special-area {
-	    float: left;
-	    height: 50%;
-	    width: 100%;
-	    margin-bottom: -3.75em;
-    }
-    .fuda {
-/*         margin-top: 1px; */
-        height: 7.5em;
-        overflow: auto;
-		display: inline-block;
-        clear:both;
-        position: relative;
-    }
-    
-    .fuda .special-area {
-	    float: left;
-	    height: 50%;
-	    margin-bottom: -3.6em;
-	    clear: right;
-    }
-    .fuda span {
-        width: 1.1em;
-        float: right;
-        font-family: 'Noto Sans', sans-serif;
-		font-weight: 700;
-    }
-    
-    .fuda-left, .fuda-middle, .fuda-right {
-	    height: 7.2em;
-	    line-height: 1.45em;
-    }
-    
-    .fuda-middle {
-        margin: 0 6px;
-    }
-    
+.fuda-left, .fuda-middle, .fuda-right {
+    height: 7.2em;
+    line-height: 1.45em;
+}
+
+.fuda-middle {
+    margin: 0 6px;
+}
+
 /*
     .fuda {background: black;}
     .fuda-middle {background: red;}
@@ -85,11 +44,11 @@
     .fuda-right {background: blue;}
 */
 
-    #fuda-21 .fuda-left {
-        line-height: 1.2em;
-    }
-    
-    span.fuda-num {
+#fuda-21 .fuda-left {
+    line-height: 1.2em;
+}
+
+span.fuda-num {
     font-size: 0.375em;
     color: #ccc;
     position: absolute;
@@ -97,34 +56,35 @@
     bottom: 2px;
 }
 
+.fuda:nth-child(3n+1) {
+    clear: left;
+}
+
 @media (min-width: 420px) {
-	
-	
-	.fuda-area {
-		font-size: 1.5em;
-		border: 4px solid #3A5745;
+
+
+    .fuda {
+        font-size: 1.5em;
+        border: 4px solid #3A5745;
         margin: 10px;
-	}
-	
-	span.fuda-num {
-		font-size: 0.375em;
-		left: 3px;
-	}
+    }
+
+    span.fuda-num {
+        font-size: 0.375em;
+        left: 3px;
+    }
 }
 
 @media (min-width: 640px) {
-	#yomiArea {
-    	font-size: 1.5em;
-	}
-	
-	.fuda-area {
-		font-size: 1.75em;
-		border: 5px solid #3A5745;
+
+    .fuda {
+        font-size: 1.75em;
+        border: 5px solid #3A5745;
         margin: 10px 20px;
-	}
-	
-	span.fuda-num {
-		font-size: 0.5em;
-		left: 3px;
-	}
+    }
+
+    span.fuda-num {
+        font-size: 0.5em;
+        left: 3px;
+    }
 }

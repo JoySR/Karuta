@@ -220,7 +220,7 @@ function displaySingleFuda(fuda) {
 
 
     var fudaCard = document.createElement("div");
-    fudaCard.setAttribute("class", "fuda fuda-tori");
+    fudaCard.setAttribute("class", "fuda-text fuda-tori");
     fudaCard.setAttribute("id", "fuda-" + fudaId);
 
     var fudaR = document.createElement("span");

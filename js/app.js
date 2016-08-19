@@ -205,7 +205,7 @@ Karuta.prototype.displaySingleFuda = function (fuda) {
 
 
     var fudaCard = document.createElement("div");
-    fudaCard.setAttribute("class", "fuda fuda-tori");
+    fudaCard.setAttribute("class", "fuda-text fuda-tori");
     fudaCard.setAttribute("id", "fuda-" + fudaId);
 
     var fudaR = document.createElement("span");
@@ -250,12 +250,12 @@ Karuta.prototype.displayToriFuda = function (fudaIndexSet) { //传入取牌数�
     for(var i = 0; i < fudaIndexSet.length; i++) {
         var fuda = this.allFudaSet["fuda"][fudaIndexSet[i]];
         var singleFudaArea = document.createElement("div");
-        singleFudaArea.setAttribute("class", "fuda-area");
+        singleFudaArea.setAttribute("class", "fuda");
         singleFudaArea.setAttribute("id", "fuda-area-"+ this.allFudaSet["fuda"][fudaIndexSet[i]].id);
-        //为实现垂直居中增加的空div
-        var specialArea = document.createElement("div");
-        specialArea.setAttribute("class","special-area");
-        singleFudaArea.appendChild(specialArea);
+        // //为实现垂直居中增加的空div
+        // var specialArea = document.createElement("div");
+        // specialArea.setAttribute("class","special-area");
+        // singleFudaArea.appendChild(specialArea);
 
         var singleFuda = this.displaySingleFuda(fuda);
         singleFudaArea.appendChild(singleFuda);
