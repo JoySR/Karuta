@@ -1,0 +1,51 @@
+{
+  "name": "React-ES6-Webpack-Sass-Biolerplate",
+  "version": "0.1.0",
+  "description": "A boilerplate with React, ES6, Webpack and Sass",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "build": "webpack --config webpack-production.config.js --progress --colors"
+  },
+  "author": "Hanna",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "http-server": "^0.8.0",
+    "img-loader": "^1.2.0",
+    "node-sass": "^3.2.0",
+    "postcss-loader": "^0.8.0",
+    "sass-loader": "^3.1.2",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-node5": "^11.1.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "history": "^3.0.0",
+    "jsdom": "^9.2.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-hot-loader": "^1.3.0",
+    "react-router": "^2.4.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "gulp": "^3.8.11",
+    "gulp-gh-pages": "^0.5.4"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.4"
+  }
+}
