@@ -18,6 +18,7 @@ export default class FudaSet extends React.Component {
           fudaRight={fuda.fudaContent[0]}
           fudaMiddle={fuda.fudaContent[1]}
           fudaLeft={fuda.fudaContent[2]}
+          fudaKimari={fuda.fudaKimari}
           onFudaSelect={this.props.onFudaSelect}
         />);
     });
