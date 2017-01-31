@@ -1,7 +1,7 @@
 import React from 'react';
 import FudaSet from '../components/FudaSet';
 import fudaList from '../../data/fuda.json';
-import Utils from '../../Utils';
+import Utils from '../../common/utils';
 
 /*
  <ToriArea

@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './Main';
 import Aside from './sidebar/Aside';
 
-import Utils from '../../Utils';
+import Utils from '../../common/utils';
 
 const styles = {
   aside: {
