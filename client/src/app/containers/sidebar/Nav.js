@@ -10,10 +10,6 @@ export default class Nav extends React.Component {
           <li><a href="tips.html">技巧</a></li>
           <li><a href="about.html">关于</a></li>
         </ul>
-        <div className="user">
-          <a href="/login" className="login">登录</a>
-          <a href="/register" className="register">注册</a>
-        </div>
       </nav>
     );
   }

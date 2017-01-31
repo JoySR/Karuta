@@ -9,39 +9,41 @@ import ToriArea from './ToriArea';
   />
 */
 
-const Main = ({fudaId, toriFudaCount, onFudaSelect}) => {
-  if(!fudaId) {
-    return <div>Loading</div>;
+export default class Main extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
   }
-  return (
-    <main>
-      <YomiArea
-        fudaId={fudaId}
-      />
-      <ToriArea
-        fudaIndex={fudaId - 1}
-        toriFudaCount={toriFudaCount}
-        onFudaSelect={onFudaSelect}
-      />
-    </main>
-  );
 
-};
+  componentDidMount() {
+    this.setYomiFudaId(this.props.fudaId);
+  }
 
-export default Main;
+  componentWillReceiveProps(newProps) {
+    this.setYomiFudaId(newProps.fudaId);
+  }
 
-// export default class Main extends React.Component {
-//   render() {
-//     return (
-//       <main>
-//         <YomiArea
-//           fudaId={this.props.fudaId}
-//         />
-//         <ToriArea
-//           fudaIndex={this.props.fudaId - 1}
-//           toriFudaCount={this.props.toriFudaCount}
-//         />
-//       </main>
-//     );
-//   }
-// }
+  setYomiFudaId(fudaId) {
+    this.setState({yomiFudaId: fudaId});
+  }
+
+  render() {
+    if (!this.props.fudaId) {
+      return <div>Loading</div>
+    } else {
+    return (
+      <main>
+        <YomiArea
+          fudaId={this.state.yomiFudaId}
+        />
+        <ToriArea
+          fudaIndex={this.props.fudaId - 1}
+          toriFudaCount={this.props.toriFudaCount}
+          onFudaSelect={this.props.onFudaSelect}
+        />
+      </main>
+    );
+    }
+  }
+}

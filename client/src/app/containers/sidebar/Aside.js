@@ -15,13 +15,41 @@ const styles = {
 };
 
 export default class Aside extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      score: 0,
+      highestScore: 0,
+      exercisedCount: 0,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      score: this.props.score,
+      highestScore: this.props.highestScore,
+      exercisedCount: this.props.exercisedCount,
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      score: nextProps.score,
+      highestScore: nextProps.highestScore,
+      exercisedCount: nextProps.exercisedCount
+    });
+  }
+
   render() {
     return (
       <aside style={styles.aside}>
         <Header />
-        <Nav />
-        <p>Hallo Welt!</p>
-        <Footer />
+        {/*<Nav />*/}
+        <p style={{marginTop: 30}}>分数：{this.state.score}</p>
+        <p style={{marginTop: 30}}>最高分数：{this.state.highestScore}</p>
+        <p style={{marginTop: 30}}>进行了 {this.state.exercisedCount} 轮练习</p>
+        {/*<Footer />*/}
       </aside>
     );
   }
