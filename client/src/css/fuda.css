@@ -1,0 +1,82 @@
+/*
+  <div class="fuda" id="fuda-17">
+    <div class="fuda-tori">
+      <span class="fuda-right">
+      <span class="fuda-middle">
+      <span class="fuda-left">
+    </div>
+    <span class="fuda-num">
+  </div>
+*/
+.fuda {
+    position: relative;
+    width: 5em;
+    height: 8em;
+    float: left;
+    margin: 5px;
+    border: 3px solid #3A5745;
+    background: #fff;
+    -webkit-box-shadow: 1px 2px 3px #666;
+    -moz-box-shadow: 1px 2px 3px #666;
+    box-shadow: 1px 2px 3px #666;
+}
+@media (min-width: 420px) {
+    .fuda {
+        margin: 10px;
+        font-size: 1.5em;
+        border: 4px solid #3A5745;
+    }
+}
+@media (min-width: 640px) {
+    .fuda {
+        margin: 10px 20px;
+        font-size: 1.75em;
+        border-width: 5px;
+    }
+}
+.fuda .fuda-tori {
+    position: relative;
+    display: inline-block;
+    height: 7.5em;
+    margin-top: 6px;
+    overflow: auto;
+    clear: both;
+    cursor: pointer;
+}
+.fuda .fuda-tori span {
+    width: 1.1em;
+    height: 7.2em;
+    float: right;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.45em;
+}
+.fuda .fuda-tori .fuda-middle {
+    margin: 0 6px;
+}
+.fuda span.fuda-num {
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    font-size: 0.375em;
+    color: #ccc;
+}
+@media (min-width: 420px) {
+    .fuda span.fuda-num {
+        font-size: 0.375em;
+        left: 3px;
+    }
+}
+@media (min-width: 640px) {
+    .fuda span.fuda-num {
+        font-size: 0.5em;
+    }
+}
+
+#fuda-21 .fuda-left {
+    line-height: 1.2em;
+}
+
+.fuda:nth-child(3n+1) {
+    clear: left;
+}
