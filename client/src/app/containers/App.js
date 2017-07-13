@@ -1,8 +1,9 @@
 import React from 'react';
 import Main from './Main';
 import Aside from './sidebar/Aside';
+import './App.scss';
 
-import Utils from '../../Utils';
+import Utils from '../../common/common';
 
 const styles = {
   aside: {
@@ -34,24 +35,11 @@ export default class App extends React.Component {
   }
 
   generateExerciseFudaList() {
-    console.log(this);
     const exerciseFudaList =  Utils.randomArray(100, this.state.totalExerciseFudaCount);
     this.setState({
       exerciseFudaList,
       currentExerciseFudaId: exerciseFudaList[0] + 1
     });
-  }
-
-  getSelectedFudaId(node) {
-    let selectedFudaId;
-    if (node.tagName === "SPAN" && node.className !== "fuda-number") {
-      selectedFudaId = node.parentNode.parentNode.id;
-    } else if (node.className === "fuda") {
-      selectedFudaId = node.id;
-    } else {
-      selectedFudaId = node.parentNode.id;
-    }
-    return selectedFudaId;
   }
 
   setExercisedFudaList() {
@@ -80,10 +68,9 @@ export default class App extends React.Component {
     this.checkIfExerciseEnd();
   }
   
-  onFudaSelect(event) {
+  onFudaSelect(id) {
     this.setState({exercisedFudaCount: this.state.exercisedFudaCount + 1});
-    const selectedFudaId = this.getSelectedFudaId(event.target);
-    if (parseInt(selectedFudaId) === this.state.currentExerciseFudaId) {
+    if (id === this.state.currentExerciseFudaId) {
       this.onFudaCorrect();
     } else {
       this.checkIfExerciseEnd();

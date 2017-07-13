@@ -1,0 +1,17 @@
+#tori-area {
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+  font-size: 1em;
+}
+
+#tori-fuda-wrap-area {
+  display: inline-block;
+  overflow: auto;
+}
+
+@media (min-width: 640px) {
+  #tori-area {
+    margin: 20px auto;
+  }
+}

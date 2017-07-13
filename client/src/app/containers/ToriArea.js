@@ -1,7 +1,8 @@
 import React from 'react';
 import FudaSet from '../components/FudaSet';
 import fudaList from '../../data/fuda.json';
-import Utils from '../../Utils';
+import Utils from '../../common/common';
+import './ToriArea.scss';
 
 /*
  <ToriArea
@@ -12,7 +13,7 @@ import Utils from '../../Utils';
 
 export default class ToriArea extends React.Component {
   getToriFudaList() {
-    const toriFudaIndexList =  Utils.generateToriFudaSet(this.props.fudaIndex, this.props.toriFudaCount);
+    const toriFudaIndexList =  Utils.initToriFudaSet(this.props.fudaIndex, this.props.toriFudaCount);
     const toriFudaList = [];
     toriFudaIndexList.map(fudaIndex => {
       const fuda = fudaList.fuda[fudaIndex];
@@ -34,10 +35,12 @@ export default class ToriArea extends React.Component {
   render() {
     return (
       <div id="tori-area">
-        <FudaSet
-          fudaList={this.getToriFudaList.call(this)}
-          onFudaSelect={this.props.onFudaSelect}
-        />
+        <div id="tori-fuda-wrap-area">
+          <FudaSet
+            fudaList={this.getToriFudaList.call(this)}
+            onFudaSelect={this.props.onFudaSelect}
+          />
+        </div>
       </div>
     );
   }

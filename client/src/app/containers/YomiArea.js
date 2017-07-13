@@ -1,5 +1,6 @@
 import React from 'react';
 import fudaList from '../../data/fuda.json';
+import './YomiArea.scss';
 
 /*
  <YomiArea
