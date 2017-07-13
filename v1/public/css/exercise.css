@@ -1,0 +1,232 @@
+html,body,
+div,p,span,
+header,main,aside,section,article,footer
+a,h1,h2,h3,h4,
+ul,li,nav,
+form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: Helvetica, Arial,sans-serif;
+    background: #fdfdfd;
+}
+
+noscript {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#wrapper {
+    min-height:100%;
+}
+
+#logo {
+    margin: 10px auto 5px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+}
+
+nav {
+    font-size: 1em;
+    text-align: center;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 5px;
+    display: none;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0 12px;
+}
+
+#container {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 60px;/*等于footer的高度*/
+}
+
+main section {
+    margin: 0 auto;
+}
+
+#setting {
+    text-align: center;
+    font-size: .875em;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 5px;
+}
+
+#modify,#modify-panel,#result,#info {display: none;}
+
+footer {
+    width: 100%;
+    text-align: center;
+    height: 60px;/*脚部的高度*/
+    clear: both;
+    margin-top: -60px; /*等于footer的高度*/
+}
+
+/************ FUDA ************/
+
+#yomiArea {
+    margin: 10px;
+    /*border: 1px solid #00f;*/
+    text-align: center;
+    font-size: .925em;
+}
+
+#yomiArea span {
+    padding: 0 8px;
+    display: inline-block;
+}
+
+#toriArea {
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+    font-size: 1em;
+}
+
+#toriFudaWrapArea {
+    display: inline-block;
+    overflow: auto;
+}
+
+.fuda-area:nth-child(3n+1) {
+    clear: left;
+}
+
+.fuda-area {
+    float: left;
+    width: 5em;
+    height: 8em;
+    margin: 2px;
+    border: 3px solid #3A5745;
+    position: relative;
+    background: #fff;
+}
+.fuda-area .special-area {
+    float: left;
+    height: 50%;
+    width: 100%;
+    margin-bottom: -3.75em;
+}
+.fuda {
+    height: 7.5em;
+    overflow: auto;
+    display: inline-block;
+    clear:both;
+    position: relative;
+}
+
+.fuda .special-area {
+    float: left;
+    height: 50%;
+    margin-bottom: -3.6em;
+    clear: right;
+}
+.fuda span {
+    width: 1.1em;
+    float: right;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+.fuda-left, .fuda-middle, .fuda-right {
+    height: 7.2em;
+    line-height: 1.45em;
+}
+
+.fuda-middle {
+    margin: 0 6px;
+}
+
+/*
+    .fuda {background: black;}
+    .fuda-middle {background: red;}
+    .fuda-left {background: green;}
+    .fuda-right {background: blue;}
+*/
+
+#fuda-21 .fuda-left {
+    line-height: 1.2em;
+}
+
+span.fuda-num {
+    font-size: 0.375em;
+    color: #ccc;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+}
+
+/************ MEDIA QUERIES ************/
+
+@media (min-width: 420px) {
+	
+	#setting {
+    	font-size: 1em;
+	}
+
+    /************ FUDA ************/    
+    #yomiArea {
+        font-size: 1.25em;
+        margin: 20px auto;
+    }
+    
+    .fuda-area {
+        font-size: 1.5em;
+        border: 4px solid #3A5745;
+        margin: 3px;
+    }
+
+    span.fuda-num {
+        font-size: 0.375em;
+        left: 3px;
+    }
+}
+
+@media (min-width: 640px) {
+	
+	#setting {
+    	font-size: 1.25em;
+	}
+
+    /************ FUDA ************/
+    #yomiArea {
+        font-size: 1.5em;
+    }
+
+    #toriArea {
+        margin: 20px auto;
+    }
+
+    .fuda-area {
+        font-size: 1.625em;
+        border: 5px solid #3A5745;
+        margin: 4px;
+    }
+
+    span.fuda-num {
+        font-size: 0.5em;
+    }
+}
+
+@media (min-width: 768px) {
+	/* TODO: 统计部分展开设计 */
+}
