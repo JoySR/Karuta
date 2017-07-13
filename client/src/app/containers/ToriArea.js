@@ -21,6 +21,7 @@ export default class ToriArea extends React.Component {
 
       toriFudaList.push({
         fudaId: fuda.id,
+        fudaKimari: fuda.kimari,
         fudaContent: [
           toriText.substr(0, 5),
           toriText.substring(5, toriText.indexOf(" ")) + toriText.substring(toriText.indexOf(" ") + 1, 11),
